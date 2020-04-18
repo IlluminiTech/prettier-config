@@ -50,7 +50,7 @@ We export one ESLint configuration for your usage:
 Create a `prettier.config.js` file at the root of your project that contains:
 
 ```js
-module.exports = require("@illumini/prettier-config");
+module.exports = require('@illumini/prettier-config');
 ```
 
 ## [Editor Integration & Autoformatting](https://prettier.io/docs/en/editors.html)
@@ -68,39 +68,23 @@ module.exports = require("@illumini/prettier-config");
 
 ## Pre-commit Hook
 
-As another line of defense, if you want Prettier to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
+As another line of defense, if you want ESLint to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
 
-1. `npm install --save-dev prettier lint-staged husky`
-2. Update your `package.json` like this:
+1. `npm install --save-dev lint-staged husky`
+2. In your `package.json`:
 
-```json
-{
-  "lint-staged": {
-    "*.{js,css,json,md}": ["prettier --write", "git add"]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
-}
-```
-
-If you already have `lint-staged` running [ESLint](https://github.com/IlluminiTech/eslint-config#pre-commit-hook), just add the prettier step on top of it:
-
-```json
-{
-  "lint-staged": {
-    "*.{js,css,json,md}": ["prettier --write", "git add"],
-    "*.js": ["eslint --fix", "git add"]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
-}
-```
+   ```json
+   {
+     "lint-staged": {
+       "*.js": ["eslint --fix"]
+     },
+     "husky": {
+       "hooks": {
+         "pre-commit": "lint-staged"
+       }
+     }
+   }
+   ```
 
 ## Publishing to npm
 
@@ -192,11 +176,7 @@ Print spaces between brackets in object literals.
 Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
 ```jsx
-<button
-  className="prettier-class"
-  id="prettier-id"
-  onClick={ this.handleClick }
->
+<button className="prettier-class" id="prettier-id" onClick={this.handleClick}>
   Click Here
 </button>
 ```
