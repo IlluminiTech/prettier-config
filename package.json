@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Illumini's base Prettier configuration.",
   "main": "index.js",
-  "contributers": [
+  "contributors": [
     "Wayne Haffenden <wayne@illumini.io>"
   ],
   "repository": {
