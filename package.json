@@ -1,6 +1,6 @@
 {
   "name": "@illumini/prettier-config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Illumini's base Prettier configuration.",
   "main": "index.js",
   "contributers": [
