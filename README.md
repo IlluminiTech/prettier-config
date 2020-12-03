@@ -17,7 +17,6 @@ Pairs well with our [`ESLint configuration`](https://www.npmjs.com/package/@illu
     - [VS Code](#vs-code)
   - [Pre-commit Hook](#pre-commit-hook)
   - [Publishing to npm](#publishing-to-npm)
-  - [Enforced Rules](#enforced-rules)
 
 ## Installation
 
@@ -68,7 +67,7 @@ module.exports = require('@illumini/prettier-config');
 
 ## Pre-commit Hook
 
-As another line of defense, if you want ESLint to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
+As another line of defence, if you want ESLint to automatically fix your errors on commit, you can use [`lint-staged`](https://github.com/okonet/lint-staged) with [`husky`](https://github.com/typicode/husky), which manages git hooks.
 
 1. `npm install --save-dev lint-staged husky`
 2. In your `package.json`:
@@ -95,101 +94,3 @@ Read npm's docs on [How to Update a Package](https://docs.npmjs.com/getting-star
 2. `npm version <update_type>`
    - `update_type` can be `patch`, `minor`, or `major`. If you don't know which one to use, go read about [semantic versioning](https://docs.npmjs.com/getting-started/semantic-versioning).
 3. `npm publish`
-
-## Enforced Rules
-
-Check out all of Prettier's [configuration options](https://prettier.io/docs/en/options.html).
-
-<details>
-<summary>Print Width</summary>
-
-Line wrap at 120 characters.
-
-</details>
-
-<details>
-<summary>Tab Width</summary>
-
-2 spaces per indentation-level.
-
-</details>
-
-<details>
-<summary>Tabs</summary>
-
-Indent lines with spaces, not tabs.
-
-</details>
-
-<details>
-<summary>Semicolons</summary>
-
-Always print semicolons at the ends of statements.
-
-```js
-const greeting = 'hi';
-```
-
-</details>
-
-<details>
-<summary>Quotes</summary>
-
-Use single quotes instead of double quotes.
-
-```js
-const greeting = 'single quotes are better';
-```
-
-</details>
-
-<details>
-<summary>Trailing Commas</summary>
-
-Use trailing commas wherever possible.
-
-```js
-const obj = {
-  a: 'hi',
-  b: 'hey',
-};
-```
-
-</details>
-
-<details>
-<summary>Bracket Spacing</summary>
-
-Print spaces between brackets in object literals.
-
-```js
-{
-  foo: bar,
-}
-```
-
-</details>
-
-<details>
-<summary>JSX Brackets</summary>
-
-Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
-
-```jsx
-<button className="prettier-class" id="prettier-id" onClick={this.handleClick}>
-  Click Here
-</button>
-```
-
-</details>
-
-<details>
-<summary>Arrow Function Parentheses</summary>
-
-Omit parens when possible.
-
-```js
-x => x;
-```
-
-</details>
